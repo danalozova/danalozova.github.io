@@ -1,325 +1,318 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dana Lozova | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* --- BĀZES STILI --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Nunito', sans-serif;
-            background: #fff; 
-            color: #111; 
-            overflow-x: hidden; 
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        
-        /* --- NAVIGĀCIJA --- */
-        nav { 
-            position: sticky; top: 0; width: 100%; padding: 20px 80px; 
-            display: flex; justify-content: space-between; align-items: center; 
-            background: #fff; z-index: 1000; 
-        }
-        .logo { font-weight: 700; color: rgb(0, 102, 255); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; text-decoration: none; cursor: pointer; }
-        .nav-left a { text-decoration: none; color: #111; margin-right: 35px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; cursor: pointer; }
-        .nav-right a { font-size: 20px; color: rgb(0, 102, 255); margin-left: 20px; text-decoration: none; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dana Lozova | Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* --- BĀZES STILI --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+font-family: 'Nunito', sans-serif;
+background: #fff;
+color: #111;
+overflow-x: hidden;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+/* --- NAVIGĀCIJA --- */
+nav {
+position: sticky; top: 0; width: 100%; padding: 20px 80px;
+display: flex; justify-content: space-between; align-items: center;
+background: #fff; z-index: 1000;
+}
+.logo { font-weight: 700; color: rgb(0, 102, 255); text-transform: uppercase; letter-spacing: 2px; font-size: 16px; text-decoration: none; cursor: pointer; }
+.nav-left a { text-decoration: none; color: #111; margin-right: 35px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500; cursor: pointer; }
+.nav-right a { font-size: 20px; color: rgb(0, 102, 255); margin-left: 20px; text-decoration: none; }
 
-        /* --- HERO SEKCIJA --- */
-        .hero { height: 75vh; width: 100%; position: relative; overflow: hidden; background: #000; z-index: 1; }
-        .hero video { width: 100%; height: 100%; object-fit: cover; }
-        
-        .header-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('images/fons.svg'); 
-            background-size: cover; background-position: center;
-            z-index: 2; pointer-events: none; mix-blend-mode: screen; opacity: 0.8;
-        }
+/* --- HERO SEKCIJA --- */
+.hero { height: 75vh; width: 100%; position: relative; overflow: hidden; background: #000; z-index: 1; }
+.hero video { width: 100%; height: 100%; object-fit: cover; }
+.header-overlay {
+position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+background-image: url('images/fons.svg');
+background-size: cover; background-position: center;
+z-index: 2; pointer-events: none; mix-blend-mode: screen; opacity: 0.8;
+}
 
-        /* FILTRI */
-        .filter-container { text-align: center; padding: 60px 0 40px; }
-        .filter-btn { 
-            font-family: 'Nunito', sans-serif;
-            background: none; border: none; padding: 10px 25px; cursor: pointer; 
-            font-size: 12px; text-transform: uppercase; letter-spacing: 2px; 
-            color: #111; opacity: 0.5; transition: 0.3s; font-weight: 600;
-        }
-        .filter-btn.active { opacity: 1; color: rgb(0, 102, 255); font-weight: 700; }
+/* FILTRI */
+.filter-container { text-align: center; padding: 60px 0 40px; }
+.filter-btn {
+font-family: 'Nunito', sans-serif;
+background: none; border: none; padding: 10px 25px; cursor: pointer;
+font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+color: #111; opacity: 0.5; transition: 0.3s; font-weight: 600;
+}
+.filter-btn.active { opacity: 1; color: rgb(0, 102, 255); font-weight: 700; }
 
-        /* GALERIJA */
-        .gallery-section { padding: 0 40px 100px; flex-grow: 1; }
-        .gallery-grid { column-count: 4; column-gap: 15px; max-width: 2400px; margin: 0 auto; }
-        
-        .gallery-item { 
-            display: inline-block; 
-            width: 100%; 
-            margin-bottom: 15px; 
-            break-inside: avoid; 
-            position: relative; 
-            cursor: pointer;
-        }
-        
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; pointer-events: none; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .gallery-item img { width: 100%; height: auto; display: block; border-radius: 2px; }
+/* GALERIJA */
+.gallery-section { padding: 0 40px 100px; flex-grow: 1; }
+.gallery-grid { column-count: 4; column-gap: 15px; max-width: 2400px; margin: 0 auto; }
+.gallery-item {
+display: inline-block;
+width: 100%;
+margin-bottom: 15px;
+break-inside: avoid;
+position: relative;
+cursor: pointer;
+}
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; pointer-events: none; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.gallery-item img { width: 100%; height: auto; display: block; border-radius: 2px; }
 
-        /* --- PAR MANI SADAĻA --- */
-        #about-section { display: none; padding: 80px 40px; max-width: 1200px; margin: 0 auto; flex-grow: 1; }
-        .about-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-        .about-image img { width: 100%; border-radius: 4px; background: #eee; }
-        .about-text h1 { font-size: 50px; text-transform: uppercase; line-height: 1; margin-bottom: 30px; color: #111; }
-        .about-intro { font-size: 18px; line-height: 1.6; color: #444; margin-bottom: 40px; }
-        
-        .resume-block { margin-bottom: 30px; }
-        .resume-block h3 { text-transform: uppercase; font-size: 14px; letter-spacing: 2px; color: rgb(0, 102, 255); margin-bottom: 15px; }
-        .resume-item { margin-bottom: 15px; font-size: 15px; line-height: 1.5; }
-        .resume-item strong { display: block; color: #111; margin-bottom: 3px; }
-        
-        .skills-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .skills-list li { font-size: 15px; color: #444; }
+/* --- PAR MANI SADAĻA --- */
+#about-section { display: none; padding: 80px 40px; max-width: 1200px; margin: 0 auto; flex-grow: 1; }
+.about-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+.about-image img { width: 100%; border-radius: 4px; background: #eee; }
+.about-text h1 { font-size: 50px; text-transform: uppercase; line-height: 1; margin-bottom: 30px; color: #111; }
+.about-intro { font-size: 18px; line-height: 1.6; color: #444; margin-bottom: 40px; }
+.resume-block { margin-bottom: 30px; }
+.resume-block h3 { text-transform: uppercase; font-size: 14px; letter-spacing: 2px; color: rgb(0, 102, 255); margin-bottom: 15px; }
+.resume-item { margin-bottom: 15px; font-size: 15px; line-height: 1.5; }
+.resume-item strong { display: block; color: #111; margin-bottom: 3px; }
+.skills-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.skills-list li { font-size: 15px; color: #444; }
 
-        /* FOOTER STILI */
-        footer {
-            padding: 40px 80px;
-            border-top: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-            color: #888;
-            letter-spacing: 1px;
-        }
-        .footer-brand { font-weight: 700; color: #111; text-transform: uppercase; }
+/* FOOTER STILI */
+footer {
+padding: 40px 80px;
+border-top: 1px solid #eee;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 13px;
+color: #888;
+letter-spacing: 1px;
+}
+.footer-brand { font-weight: 700; color: #111; text-transform: uppercase; }
 
-        /* MODĀLAIS LOGS */
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.98); z-index: 2000; display: none; overflow-y: auto; }
-        .modal-content { max-width: 1400px; margin: 100px auto; padding: 0 50px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
-        .modal-media img { width: 100%; height: auto; display: block; border-radius: 4px; }
-        .modal-info h2 { font-size: 38px; color: rgb(0, 102, 255); text-transform: uppercase; margin-bottom: 20px; font-weight: 700; }
-        .modal-info .description { font-size: 17px; line-height: 1.6; color: #444; margin-bottom: 40px; }
-        .info-grid { border-top: 1px solid #eee; padding-top: 30px; }
-        .info-label { font-size: 11px; text-transform: uppercase; color: #aaa; letter-spacing: 1px; display: block; margin-bottom: 5px; font-weight: 700; }
-        .info-value { font-size: 16px; color: #111; }
-        .close-modal { position: fixed; top: 30px; right: 50px; font-size: 45px; cursor: pointer; color: #111; z-index: 2100; }
+/* MODĀLAIS LOGS */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.98); z-index: 2000; display: none; overflow-y: auto; }
+.modal-content { max-width: 1400px; margin: 100px auto; padding: 0 50px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
+.modal-media img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.modal-info h2 { font-size: 38px; color: rgb(0, 102, 255); text-transform: uppercase; margin-bottom: 20px; font-weight: 700; }
+.modal-info .description { font-size: 17px; line-height: 1.6; color: #444; margin-bottom: 40px; }
+.info-grid { border-top: 1px solid #eee; padding-top: 30px; }
+.info-label { font-size: 11px; text-transform: uppercase; color: #aaa; letter-spacing: 1px; display: block; margin-bottom: 5px; font-weight: 700; }
+.info-value { font-size: 16px; color: #111; }
+.close-modal { position: fixed; top: 30px; right: 50px; font-size: 45px; cursor: pointer; color: #111; z-index: 2100; }
 
-        /* RESPONSIBA */
-        @media (max-width: 900px) { 
-            .about-container { grid-template-columns: 1fr; }
-            .modal-content { grid-template-columns: 1fr; margin-top: 60px; } 
-            .gallery-grid { column-count: 2; }
-            nav, footer { padding: 20px 30px; }
-            footer { flex-direction: column; gap: 10px; text-align: center; }
-        }
-        @media (max-width: 600px) { .gallery-grid { column-count: 1; } }
-    </style>
+/* RESPONSIBA */
+@media (max-width: 900px) {
+.about-container { grid-template-columns: 1fr; }
+.modal-content { grid-template-columns: 1fr; margin-top: 60px; }
+.gallery-grid { column-count: 2; }
+nav, footer { padding: 20px 30px; }
+footer { flex-direction: column; gap: 10px; text-align: center; }
+}
+@media (max-width: 600px) { .gallery-grid { column-count: 1; } }
+</style>
 </head>
 <body>
 
 <nav>
-    <div class="nav-left">
-        <a onclick="showAbout()">Par mani</a>
-        <a href="mailto:dana.lozova@gmail.com">Kontakti</a>
-    </div>
-    <a onclick="showGallery()" class="logo">Dana Lozova</a>
-    <div class="nav-right">
-        <a href="https://www.youtube.com/@DanaLozova" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.instagram.com/utopijas" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="mailto:dana.lozova@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-    </div>
+<div class="nav-left">
+<a onclick="showAbout()">Par mani</a>
+<a href="mailto:dana.lozova@gmail.com">Kontakti</a>
+</div>
+<a onclick="showGallery()" class="logo">Dana Lozova</a>
+<div class="nav-right">
+<a href="https://www.youtube.com/@DanaLozova" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+<a href="https://www.instagram.com/utopijas" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<a href="mailto:dana.lozova@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
 </nav>
 
 <div id="portfolio-content">
-    <section class="hero">
-        <div class="header-overlay"></div>
-        <video autoplay muted loop playsinline><source src="video/video.mp4" type="video/mp4"></video>
-    </section>
+<section class="hero">
+<div class="header-overlay"></div>
+<video autoplay muted loop playsinline><source src="video/video.mp4" type="video/mp4"></video>
+</section>
 
-    <div class="filter-container">
-        <button class="filter-btn active" onclick="filterGallery('all', this)">Visi</button>
-        <button class="filter-btn" onclick="filterGallery('foto', this)">Fotogrāfija</button>
-        <button class="filter-btn" onclick="filterGallery('video-darbi', this)">Video</button>
-    </div>
+<div class="filter-container">
+<button class="filter-btn active" onclick="filterGallery('all', this)">Visi</button>
+<button class="filter-btn" onclick="filterGallery('foto', this)">Fotogrāfija</button>
+<button class="filter-btn" onclick="filterGallery('video-darbi', this)">Video</button>
+</div>
 
-    <section class="gallery-section">
-        <div class="gallery-grid">
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'ZefCtI-ZUSU', 'Ziemas Klusums', 'Apraksts...', 'Klients: Personāls')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZefCtI-ZUSU?autoplay=1&mute=1&playlist=ZefCtI-ZUSU&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'CNqLZs3lMOk', 'Jaunmoku Parks', 'Apraksts...', '2023')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/CNqLZs3lMOk?autoplay=1&mute=1&playlist=CNqLZs3lMOk&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'mBzlKwx7RYk', 'Projekts 3', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/mBzlKwx7RYk?autoplay=1&mute=1&playlist=mBzlKwx7RYk&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'yc0NlDLE7mY', 'Projekts 4', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yc0NlDLE7mY?autoplay=1&mute=1&playlist=yc0NlDLE7mY&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'HIUm2p6JUpQ', 'Projekts 5', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/HIUm2p6JUpQ?autoplay=1&mute=1&playlist=HIUm2p6JUpQ&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'lyH9bpc-hcQ', 'Projekts 6', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/lyH9bpc-hcQ?autoplay=1&mute=1&playlist=lyH9bpc-hcQ&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'rbC1cnlFbYc', 'Projekts 7', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rbC1cnlFbYc?autoplay=1&mute=1&playlist=rbC1cnlFbYc&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Projekts 8', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qjIZCTrh1Ag?autoplay=1&mute=1&playlist=qjIZCTrh1Ag&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'nk4FbV-Fam0', 'Projekts 9', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nk4FbV-Fam0?autoplay=1&mute=1&playlist=nk4FbV-Fam0&loop=1&controls=0"></iframe></div>
-            </div>
-            <div class="gallery-item video-darbi" onclick="openModal('video', 'FF2eNCD620o', 'Projekts 10', 'Apraksts...', 'Info...')">
-                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/FF2eNCD620o?autoplay=1&mute=1&playlist=FF2eNCD620o&loop=1&controls=0"></iframe></div>
-            </div>
+<section class="gallery-section">
+<div class="gallery-grid">
+<div class="gallery-item video-darbi" onclick="openModal('video', 'ZefCtI-ZUSU', 'Ziemas Klusums', 'Apraksts...', 'Klients: Personāls')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZefCtI-ZUSU?autoplay=1&mute=1&playlist=ZefCtI-ZUSU&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'CNqLZs3lMOk', 'Jaunmoku Parks', 'Apraksts...', '2023')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/CNqLZs3lMOk?autoplay=1&mute=1&playlist=CNqLZs3lMOk&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'mBzlKwx7RYk', 'Projekts 3', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/mBzlKwx7RYk?autoplay=1&mute=1&playlist=mBzlKwx7RYk&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'yc0NlDLE7mY', 'Projekts 4', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yc0NlDLE7mY?autoplay=1&mute=1&playlist=yc0NlDLE7mY&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'HIUm2p6JUpQ', 'Projekts 5', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/HIUm2p6JUpQ?autoplay=1&mute=1&playlist=HIUm2p6JUpQ&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'lyH9bpc-hcQ', 'Projekts 6', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/lyH9bpc-hcQ?autoplay=1&mute=1&playlist=lyH9bpc-hcQ&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'rbC1cnlFbYc', 'Projekts 7', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rbC1cnlFbYc?autoplay=1&mute=1&playlist=rbC1cnlFbYc&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Projekts 8', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qjIZCTrh1Ag?autoplay=1&mute=1&playlist=qjIZCTrh1Ag&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'nk4FbV-Fam0', 'Projekts 9', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nk4FbV-Fam0?autoplay=1&mute=1&playlist=nk4FbV-Fam0&loop=1&controls=0"></iframe></div>
+</div>
+<div class="gallery-item video-darbi" onclick="openModal('video', 'FF2eNCD620o', 'Projekts 10', 'Apraksts...', 'Info...')">
+<div class="video-wrapper"><iframe src="https://www.youtube.com/embed/FF2eNCD620o?autoplay=1&mute=1&playlist=FF2eNCD620o&loop=1&controls=0"></iframe></div>
+</div>
 
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/1.jpg', 'Foto 1', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/1.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/2.jpg', 'Foto 2', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/2.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/3.jpg', 'Foto 3', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/3.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/4.jpg', 'Foto 4', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/4.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/5.jpg', 'Foto 5', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/5.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/6.jpg', 'Foto 6', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/6.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/7.jpg', 'Foto 7', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/7.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/8.jpg', 'Foto 8', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/8.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/9.jpg', 'Foto 9', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/9.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/10.jpg', 'Foto 10', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/10.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/11.jpg', 'Foto 11', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/11.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/12.jpg', 'Foto 12', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/12.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/13.jpg', 'Foto 13', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/13.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/14.jpg', 'Foto 14', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/14.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/15.jpg', 'Foto 15', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/15.jpg"></div>
-            <div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/16.jpg', 'Foto 16', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/16.jpg"></div>
-        </div>
-    </section>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/1.jpg', 'Foto 1', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/1.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/2.jpg', 'Foto 2', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/2.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/3.jpg', 'Foto 3', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/3.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/4.jpg', 'Foto 4', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/4.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/5.jpg', 'Foto 5', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/5.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/6.jpg', 'Foto 6', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/6.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/7.jpg', 'Foto 7', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/7.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/8.jpg', 'Foto 8', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/8.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/9.jpg', 'Foto 9', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/9.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/10.jpg', 'Foto 10', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/10.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/11.jpg', 'Foto 11', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/11.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/12.jpg', 'Foto 12', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/12.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/13.jpg', 'Foto 13', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/13.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/14.jpg', 'Foto 14', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/14.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/15.jpg', 'Foto 15', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/15.jpg"></div>
+<div class="gallery-item foto" onclick="openModal('image', 'thumbnails/fotografija/16.jpg', 'Foto 16', 'Apraksts...', '2024')"><img src="thumbnails/fotografija/16.jpg"></div>
+</div>
+</section>
 </div>
 
 <section id="about-section">
-    <div class="about-container">
-        <div class="about-image">
-            <img src="images/parmani.png" alt="Dana Lozova">
-        </div>
-        <div class="about-text">
-            <h1>Dana Lozova</h1>
-            <p class="about-intro">
-                Lorem ipsum
+<div class="about-container">
+<div class="about-image">
+<img src="images/parmani.png" alt="Dana Lozova">
+</div>
+<div class="about-text">
+<h1>Dana Lozova</h1>
+<p class="about-intro">
+Lorem ipsum
 
-            <div class="resume-block">
-                <h3>Izglītība</h3>
-                <div class="resume-item">
-                    <strong>2020-2024</strong>
-                    Liepājas Mūzikas, mākslas un dizaina vidusskola. Reklāmas dizains.
-                     <strong>2024-...</strong>
-                     Latvijas Mākslas akdēmija. Vizuālā komunikācija.
-                </div>
-            </div>
+<div class="resume-block">
+<h3>Izglītība</h3>
+<div class="resume-item">
+<strong>2020-2024</strong>
+Liepājas Mūzikas, mākslas un dizaina vidusskola. Reklāmas dizains.
+<strong>2024-...</strong>
+Latvijas Mākslas akdēmija. Vizuālā komunikācija.
+</div>
+</div>
 
-            <div class="resume-block">
-                <h3>Mediji</h3>
-                <ul class="skills-list">
-                    <li>Fotografēšana</li>
-                    <li>Grafikas dizains</li>
-                    <li>Video </li>
-                    <li>3D </li>
-                    <li>Skaņa </li>
+<div class="resume-block">
+<h3>Mediji</h3>
+<ul class="skills-list">
+<li>Fotografēšana</li>
+<li>Grafikas dizains</li>
+<li>Video </li>
+<li>3D </li>
+<li>Skaņa </li>
 
-                </ul>
-            </div>
+</ul>
+</div>
 
-            <div class="resume-block">
-                <h3>Pieredze</h3>
-                <div class="resume-item">
-                    <strong>Prakses vietas</strong>
-                    2022: Drukas aģentūra SIA "Abcprint"<br>
-                    2023: Drukas aģentūra SIA "Fortius"<br>
-                    2023: Apģērba un aksesuāru veikala "Selvatika" grafikas dizaina izveide, Barselona
+<div class="resume-block">
+<h3>Pieredze</h3>
+<div class="resume-item">
+<strong>Prakses vietas</strong>
+2022: Drukas aģentūra SIA "Abcprint"<br>
+2023: Drukas aģentūra SIA "Fortius"<br>
+2023: Apģērba un aksesuāru veikala "Selvatika" grafikas dizaina izveide, Barselona
 
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <footer>
-    <div class="footer-brand">Dana Lozova</div>
-    <div class="footer-copy">&copy; 2026</div>
+<div class="footer-brand">Dana Lozova</div>
+<div class="footer-copy">&copy; 2026</div>
 </footer>
 
 <div id="workModal" class="modal">
-    <span class="close-modal" onclick="closeModal()">&times;</span>
-    <div class="modal-content">
-        <div class="modal-media" id="modalMedia"></div>
-        <div class="modal-info">
-            <h2 id="modalTitle"></h2>
-            <div class="description" id="modalDesc"></div>
-            <div class="info-grid">
-                <span class="info-label">Papildu informācija</span>
-                <div class="info-value" id="modalExtra"></div>
-            </div>
-        </div>
-    </div>
+<span class="close-modal" onclick="closeModal()">&times;</span>
+<div class="modal-content">
+<div class="modal-media" id="modalMedia"></div>
+<div class="modal-info">
+<h2 id="modalTitle"></h2>
+<div class="description" id="modalDesc"></div>
+<div class="info-grid">
+<span class="info-label">Papildu informācija</span>
+<div class="info-value" id="modalExtra"></div>
+</div>
+</div>
+</div>
 </div>
 
 <script>
-    // PĀRSLĒGŠANĀS FUNKCIJAS
-    function showAbout() {
-        document.getElementById('portfolio-content').style.display = 'none';
-        document.getElementById('about-section').style.display = 'block';
-        window.scrollTo(0, 0);
-    }
+// PĀRSLĒGŠANĀS FUNKCIJAS
+function showAbout() {
+document.getElementById('portfolio-content').style.display = 'none';
+document.getElementById('about-section').style.display = 'block';
+window.scrollTo(0, 0);
+}
 
-    function showGallery() {
-        document.getElementById('portfolio-content').style.display = 'block';
-        document.getElementById('about-section').style.display = 'none';
-        window.scrollTo(0, 0);
-    }
+function showGallery() {
+document.getElementById('portfolio-content').style.display = 'block';
+document.getElementById('about-section').style.display = 'none';
+window.scrollTo(0, 0);
+}
 
-    // GALERIJAS FILTRS
-    function filterGallery(category, btn) {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            if (category === 'all' || item.classList.contains(category)) {
-                item.style.display = 'inline-block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    }
+// GALERIJAS FILTRS
+function filterGallery(category, btn) {
+document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+document.querySelectorAll('.gallery-item').forEach(item => {
+if (category === 'all' || item.classList.contains(category)) {
+item.style.display = 'inline-block';
+} else {
+item.style.display = 'none';
+}
+});
+}
 
-    // MODĀLAIS LOGS
-    function openModal(type, source, title, desc, extra) {
-        const modal = document.getElementById('workModal');
-        const media = document.getElementById('modalMedia');
-        document.getElementById('modalTitle').innerText = title || "";
-        document.getElementById('modalDesc').innerText = desc || "";
-        document.getElementById('modalExtra').innerHTML = extra || "";
+// MODĀLAIS LOGS
+function openModal(type, source, title, desc, extra) {
+const modal = document.getElementById('workModal');
+const media = document.getElementById('modalMedia');
+document.getElementById('modalTitle').innerText = title || "";
+document.getElementById('modalDesc').innerText = desc || "";
+document.getElementById('modalExtra').innerHTML = extra || "";
 
-        if (type === 'video') {
-            media.innerHTML = `<div style="position:relative;padding-bottom:56.25%;height:0;background:#000;">
-                <iframe src="https://www.youtube.com/embed/${source}?autoplay=1&rel=0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen allow="autoplay"></iframe>
-            </div>`;
-        } else {
-            media.innerHTML = `<img src="${source}">`;
-        }
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
+if (type === 'video') {
+media.innerHTML = `<div style="position:relative;padding-bottom:56.25%;height:0;background:#000;">
+<iframe src="https://www.youtube.com/embed/${source}?autoplay=1&rel=0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen allow="autoplay"></iframe>
+</div>`;
+} else {
+media.innerHTML = `<img src="${source}">`;
+}
+modal.style.display = 'block';
+document.body.style.overflow = 'hidden';
+}
 
-    function closeModal() {
-        document.getElementById('workModal').style.display = 'none';
-        document.getElementById('modalMedia').innerHTML = '';
-        document.body.style.overflow = 'auto';
-    }
+function closeModal() {
+document.getElementById('workModal').style.display = 'none';
+document.getElementById('modalMedia').innerHTML = '';
+document.body.style.overflow = 'auto';
+}
 
-    window.onclick = function(event) {
-        if (event.target == document.getElementById('workModal')) {
-            closeModal();
-        }
-    }
+window.onclick = function(event) {
+if (event.target == document.getElementById('workModal')) {
+closeModal();
+}
+}
 </script>
 </body>
-</html>
