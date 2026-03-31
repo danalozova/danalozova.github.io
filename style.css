@@ -123,7 +123,7 @@ nav {
     opacity: 1;
 }
 
-/* --- 6. GALERIJA (SALABOTI VIDEO UN MELNĀS STRĪPAS) --- */
+/* --- 6. GALERIJA (ULTIMATE FIX PRETI MALĀM) --- */
 .gallery-section {
     position: relative; 
     background: white; 
@@ -141,12 +141,13 @@ nav {
 
 .gallery-item {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Svarīgi: nogriež visu, kas iziet ārpus rāmja */
     cursor: pointer;
     display: block;
     background: #000;
-    /* Nodrošina, ka visi rāmji ir vienādi 16:9 formātā */
     aspect-ratio: 16 / 9;
+    line-height: 0; 
+    font-size: 0;   
 }
 
 .video-wrapper {
@@ -160,20 +161,22 @@ nav {
 
 .video-wrapper iframe {
     position: absolute;
-    /* Zoom un centrēšanas triks, lai nogrieztu melnās malas */
     top: 50%;
     left: 50%;
-    width: 102%; 
-    height: 102%;
-    transform: translate(-50%, -50%) scale(1.06);
-    border: 0;
+    /* Agresīvs mērogs: palielinām iframe par 15%, lai melnās malas paliktu aiz rāmja malām */
+    width: 115%; 
+    height: 115%; 
+    transform: translate(-50%, -50%);
+    border: none;
+    display: block;
+    outline: none;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover; /* Nodrošina, ka attēls aizpilda 16:9 rāmi */
+    object-fit: cover; 
     transition: transform .4s ease;
 }
 
@@ -195,9 +198,14 @@ nav {
 
 .gallery-item:hover .overlay { opacity: 1; }
 
-/* Animācija abiem mediju veidiem */
-.gallery-item:hover img { transform: scale(1.05); }
-.gallery-item:hover .video-wrapper iframe { transform: translate(-50%, -50%) scale(1.12); }
+.gallery-item:hover img { 
+    transform: scale(1.05); 
+}
+
+/* Hover laikā saglabājam centrējumu, bet varam nedaudz vairāk pietuvināt */
+.gallery-item:hover .video-wrapper iframe { 
+    transform: translate(-50%, -50%) scale(1.03); 
+}
 
 /* --- 7. MODĀLAIS LOGS --- */
 .modal { 
