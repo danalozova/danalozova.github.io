@@ -1,123 +1,167 @@
 /* RESET */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:'Inter',sans-serif;
-background:white;
-color:#111;
+    font-family:'Inter', sans-serif;
+    background:white;
+    color:#111;
+    /* Nodrošina, ka nekas neiziet ārpus ekrāna malām */
+    overflow-x: hidden; 
 }
 
-/* SVG overlay */
-
-.bg{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:20;
-pointer-events:none;
+/* --- SVG OVERLAY AR BLEND MODE --- */
+.bg {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    z-index: 2; /* Virs video, bet zem nav un galerijas */
+    pointer-events: none;
+    
+    /* Šis panāk Multiply/Screen efektu */
+    mix-blend-mode: screen; 
+    opacity: 0.8; /* Pielāgo, cik izteikti redzami skrāpējumi */
 }
 
 /* NAV */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-padding:20px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(255,255,255,0.85);
-backdrop-filter:blur(10px);
-z-index:1000;
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 .nav-left a,
-.nav-right a{
-text-decoration:none;
-color:#111;
-margin-right:20px;
-font-weight:400;
+.nav-right a {
+    text-decoration: none;
+    color: #111;
+    margin-right: 20px;
+    font-weight: 400;
 }
 
-.logo{
-font-weight:500;
-color:rgb(0,102,255);
+.logo {
+    font-weight: 500;
+    color: rgb(0, 102, 255);
 }
+
+/* SOCIĀLĀS IKONAS */
+.nav-right a {
+    margin-left: 8px;
+    font-size: 24px;
+    color: rgb(0, 102, 255);
+    transition: opacity 0.3s ease;
+}
+
+.nav-right a:hover { opacity: 0.7; }
+.logo:hover { opacity: 0.85; }
 
 /* HERO VIDEO */
-
-.hero{
-height:90vh;
-width:100%;
-overflow:hidden;
-position:relative;
+.hero {
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative; 
+    z-index: 1; 
 }
 
-.hero video{
-width:100%;
-height:100%;
-object-fit:cover;
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* GALLERY */
-
-.gallery-section{
-padding:100px 60px;
+/* --- FILTRĒŠANAS POGAS --- */
+.filter-container {
+    text-align: center;
+    padding: 40px 0 20px;
+    background: white;
+    position: relative;
+    z-index: 10;
 }
 
-.gallery-title{
-text-align:center;
-margin-bottom:60px;
-font-size:22px;
-font-weight:400;
+.filter-btn {
+    background: none;
+    border: 1px solid #eee;
+    padding: 8px 25px;
+    margin: 0 5px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
+.filter-btn:hover, .filter-btn.active {
+    background: rgb(0, 102, 255);
+    color: white;
+    border-color: rgb(0, 102, 255);
 }
 
-.gallery-item{
-position:relative;
-overflow:hidden;
-cursor:pointer;
+/* GALLERY SECTION */
+.gallery-section {
+    position: relative; 
+    background: white; /* Balts fons, lai nosegtu video skrollējot */
+    z-index: 10; 
+    padding: 20px 60px 100px 60px;
 }
 
-.gallery-item img{
-width:100%;
-display:block;
-transition:transform .4s ease;
+.gallery-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 22px;
+    font-weight: 400;
 }
 
-/* HOVER */
-
-.overlay{
-position:absolute;
-inset:0;
-background:rgba(0,102,255,0.6);
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-font-size:18px;
-opacity:0;
-transition:opacity .3s ease;
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
-.gallery-item:hover img{
-transform:scale(1.05);
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
 }
 
-.gallery-item:hover .overlay{
-opacity:1;
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform .4s ease;
+}
+
+/* HOVER EFFECT */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 102, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
 }
