@@ -99,6 +99,7 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
 <button class="filter-btn active" onclick="filterGallery('all', this)">Visi</button> 
 <button class="filter-btn" onclick="filterGallery('foto', this)">Fotogrāfija</button> 
 <button class="filter-btn" onclick="filterGallery('video-darbi', this)">Video</button> 
+<button class="filter-btn" onclick="filterGallery('grafika', this)">Grafikas dizains</button> 
 </div> 
 
 <section class="gallery-section"> 
@@ -179,6 +180,42 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
     <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/produkts1.jpg', 'Produkts 1', 'Dizaina sērija.', '2024')">
         <img src="web_bildes/thumbnails/produkts1.jpg" alt="Produkts 1">
     </div>
+
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/102km1.jpg', 'web_grafika/102km2.jpg', 'web_grafika/102_still_3.jpg'
+    ], '102 KM', 'Grafikas dizaina projekts.', '2026')">
+        <img src="web_grafika/102km1.jpg" alt="102 KM">
+    </div>
+
+    <div class="gallery-item grafika" onclick="openModal('image', 'web_grafika/ilustracija.jpg', 'Ilustrācija', 'Digitālais zīmējums.', '2026')">
+        <img src="web_grafika/ilustracija.jpg" alt="Ilustrācija">
+    </div>
+
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/nedienas1.jpg', 'web_grafika/nedienas2.jpg', 'web_grafika/nedienas3.jpg'
+    ], 'Nedienas', 'Vizuālais stāsts / sērija.', '2026')">
+        <img src="web_grafika/nedienas1.jpg" alt="Nedienas">
+    </div>
+
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/serija1_1.jpg', 'web_grafika/serija1_2.jpg', 'web_grafika/serija1_3.jpg'
+    ], 'Sērija I', 'Grafikas dizaina eksperimenti.', '2026')">
+        <img src="web_grafika/serija1_1.jpg" alt="Sērija 1">
+    </div>
+
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/serija2_1.jpg', 'web_grafika/serija2_2.jpg', 'web_grafika/serija2_3.jpg',
+        'web_grafika/serija2_4.jpg', 'web_grafika/serija2_5.jpg', 'web_grafika/serija2_6.jpg'
+    ], 'Sērija II', 'Identitātes un stila izpēte.', '2026')">
+        <img src="web_grafika/serija2_1.jpg" alt="Sērija 2">
+    </div>
+
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/zins1.jpg', 'web_grafika/zins2.jpg'
+    ], 'Zins', 'Pašizdots izdevums / Zine.', '2026')">
+        <img src="web_grafika/zins1.jpg" alt="Zins">
+    </div>
+
 </div> 
 </section> 
 </div> 
