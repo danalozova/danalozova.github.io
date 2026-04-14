@@ -5,11 +5,16 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Nunito', sans-serif;
-    background: white;
-    color: #111;
-    overflow-x: hidden; 
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    background: #fff; 
+    color: #111; 
+    /* pārējais paliek tāpat */
+}
+
+.filter-btn { 
+    font-family: 'Montserrat', sans-serif; 
+    /* pārējais paliek tāpat */
 }
 
 /* --- 2. FONTS UN OVERLAY --- */
