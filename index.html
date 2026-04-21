@@ -5,121 +5,118 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <title>Dana Lozova | Portfolio</title> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style> 
 /* --- PAMATA STILI --- */ 
 * { margin: 0; padding: 0; box-sizing: border-box; } 
-body { 
-    font-family: 'Poppins', sans-serif; 
-    font-weight: 300; 
-    background: #fff; 
-    color: #111; 
-    overflow-x: hidden; 
-    display: flex; 
-    flex-direction: column; 
-    min-height: 100vh; 
-} 
+body { font-family: 'Nunito', sans-serif; background: #fff; color: #111; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; } 
 
-/* --- NAVIGĀCIJA --- */ 
+/* --- NAVIGĀCIJA AR PRECIZU CENTRĒŠANU --- */ 
 nav { 
     position: sticky; 
     top: 0; 
     width: 100%; 
-    padding: 25px 80px; 
+    padding: 20px 80px; 
     display: grid; 
     grid-template-columns: 1fr auto 1fr; 
     align-items: center; 
     background: #fff; 
     z-index: 1000; 
 } 
-.nav-left { display: flex; gap: 35px; }
-.nav-right { display: flex; justify-content: flex-end; gap: 20px; }
 
-/* TIKAI VĀRDS IR BOLD */
-.logo { 
-    font-weight: 700; 
-    color: rgb(0, 102, 255); 
-    text-transform: uppercase; 
-    letter-spacing: 4px; 
-    font-size: 18px; 
-    text-decoration: none; 
-    cursor: pointer;
-    text-align: center;
-    transition: 0.3s;
-} 
-.logo:hover { opacity: 0.7; }
-
-/* SADAĻAS IR LIGHT */
-nav a { 
+.nav-left { display: flex; gap: 35px; } 
+.nav-left a { 
     text-decoration: none; 
     color: #111; 
     font-size: 13px; 
     text-transform: uppercase; 
-    letter-spacing: 1.5px; 
-    font-weight: 300; 
+    letter-spacing: 1px; 
+    font-weight: 500; 
     cursor: pointer; 
-    transition: 0.3s;
+    transition: 0.3s; 
 } 
-nav a:hover, .nav-right a:hover { color: rgb(0, 102, 255); }
-.nav-right a { font-size: 18px; color: rgb(0, 102, 255); }
+/* HOVER EFEKTS: Teksts kļūst zils */
+.nav-left a:hover { color: rgb(0, 102, 255); }
 
-/* --- HERO --- */ 
+.logo { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; 
+    color: rgb(0, 102, 255); 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-size: 16px; 
+    text-decoration: none; 
+    cursor: pointer; 
+} 
+
+.nav-right { display: flex; justify-content: flex-end; gap: 20px; } 
+.nav-right a { font-size: 20px; color: rgb(0, 102, 255); text-decoration: none; transition: 0.3s; } 
+.nav-right a:hover { opacity: 0.7; } 
+
+/* --- HERO SEKCIJA --- */ 
 .hero { height: 75vh; width: 100%; position: relative; overflow: hidden; background: #000; z-index: 1; } 
 .hero video { width: 100%; height: 100%; object-fit: cover; } 
 .header-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/fons.svg'); background-size: cover; background-position: center; z-index: 2; pointer-events: none; mix-blend-mode: screen; opacity: 0.8; } 
 
-/* --- FILTRI --- */ 
+/* FILTRI */ 
 .filter-container { text-align: center; padding: 60px 0 40px; } 
-.filter-btn { 
-    font-family: 'Poppins', sans-serif; 
-    background: none; border: none; padding: 10px 20px; 
-    cursor: pointer; font-size: 12px; text-transform: uppercase; 
-    letter-spacing: 2px; color: #111; opacity: 0.4; transition: 0.3s; font-weight: 300; 
-} 
-.filter-btn:hover, .filter-btn.active { opacity: 1; color: rgb(0, 102, 255); } 
+.filter-btn { font-family: 'Nunito', sans-serif; background: none; border: none; padding: 10px 25px; cursor: pointer; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #111; opacity: 0.5; transition: 0.3s; font-weight: 600; } 
+.filter-btn:hover { opacity: 1; color: rgb(0, 102, 255); }
+.filter-btn.active { opacity: 1; color: rgb(0, 102, 255); font-weight: 700; } 
 
-/* --- GALERIJA --- */ 
+/* GALERIJA */ 
 .gallery-section { padding: 0 40px 100px; flex-grow: 1; } 
 .gallery-grid { column-count: 5; column-gap: 15px; max-width: 1500px; margin: 0 auto; } 
-.gallery-item { display: inline-block; width: 100%; margin-bottom: 15px; break-inside: avoid; position: relative; cursor: pointer; transition: 0.4s ease; } 
+.gallery-item { display: inline-block; width: 100%; margin-bottom: 15px; break-inside: avoid; position: relative; cursor: pointer; transition: 0.3s ease; } 
 .gallery-item img { width: 100%; height: auto; display: block; border-radius: 2px; transition: 0.3s; } 
-.gallery-item:hover { transform: scale(1.03); z-index: 5; }
+.gallery-item:hover { transform: scale(1.02); z-index: 5; }
 .gallery-item:hover img { filter: brightness(0.8); }
 
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 2px; pointer-events: none; } 
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } 
 
-/* --- IEKŠLAPAS --- */
+/* --- PAR MANI UN KONTAKTI --- */
 #about-section, #contact-section { display: none; padding: 80px 40px; max-width: 1200px; margin: 0 auto; flex-grow: 1; } 
 .about-container, .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; } 
 .about-image img, .contact-image img { width: 100%; border-radius: 4px; } 
 
-.section-title { font-size: 36px; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 25px; color: #111; font-weight: 300; } 
-.sub-title { text-transform: uppercase; font-size: 12px; letter-spacing: 2px; color: rgb(0, 102, 255); margin-bottom: 15px; font-weight: 300; } 
+.section-title { font-size: 40px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; color: #111; font-weight: 700; } 
+.sub-title { text-transform: uppercase; font-size: 12px; letter-spacing: 2px; color: rgb(0, 102, 255); margin-bottom: 15px; font-weight: 700; } 
 
-.resume-item { margin-bottom: 15px; font-size: 14px; line-height: 1.8; color: #111; } 
-.resume-item strong { display: block; margin-bottom: 3px; font-weight: 700; } 
+.resume-block { margin-bottom: 35px; } 
+.resume-item { margin-bottom: 15px; font-size: 14px; line-height: 1.5; color: #111; } 
+.resume-item strong { display: block; margin-bottom: 3px; } 
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; color: #111; }
 
-.contact-link-item { font-size: 16px; color: #111; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; font-weight: 300; }
-.contact-link-item:hover { color: rgb(0, 102, 255); padding-left: 10px; }
+.contact-link-item { font-size: 15px; color: #111; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+.contact-link-item:hover { color: rgb(0, 102, 255); padding-left: 5px; }
 
 /* --- MODĀLS --- */ 
 .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 2000; display: none; overflow-y: auto; } 
 .modal-content { max-width: 1500px; margin: 50px auto; padding: 0 50px; display: grid; grid-template-columns: 1.8fr 1fr; gap: 60px; } 
-#modalMedia { width: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; } 
-#modalMedia img { max-width: 100%; max-height: 85vh; object-fit: contain; margin-bottom: 20px; }
-.modal-info h2 { font-size: 32px; color: rgb(0, 102, 255); text-transform: uppercase; margin-bottom: 20px; font-weight: 300; letter-spacing: 2px; } 
-.close-modal { position: fixed; top: 30px; right: 50px; font-size: 40px; cursor: pointer; color: #111; z-index: 2100; transition: 0.3s; font-weight: 300; } 
-.close-modal:hover { color: rgb(0, 102, 255); }
+.slider-container { position: relative; width: 100%; text-align: center; } 
+#modalMedia { width: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; } 
+.main-slide { max-width: 100%; max-height: 75vh; object-fit: contain; display: none; } 
+.main-slide.active { display: block; } 
+.nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgb(0, 102, 255); color: white; border: none; width: 45px; height: 45px; cursor: pointer; border-radius: 50%; z-index: 10; font-size: 20px; } 
+.prev-btn { left: -20px; } .next-btn { right: -20px; } 
+.thumb-bar { display: flex; gap: 8px; margin-top: 20px; overflow-x: auto; justify-content: center; padding: 10px; } 
+.thumb-item { width: 60px; height: 60px; object-fit: cover; cursor: pointer; opacity: 0.4; border: 2px solid transparent; } 
+.thumb-item.active { opacity: 1; border-color: rgb(0, 102, 255); } 
+.modal-info h2 { font-size: 38px; color: rgb(0, 102, 255); text-transform: uppercase; margin-bottom: 20px; font-weight: 700; } 
+.description { font-size: 17px; line-height: 1.6; color: #444; margin-bottom: 40px; } 
+.info-grid { border-top: 1px solid #eee; padding-top: 30px; } 
+.info-label { font-size: 11px; text-transform: uppercase; color: #aaa; letter-spacing: 1px; display: block; margin-bottom: 5px; font-weight: 700; } 
+.info-value { font-size: 16px; color: #111; } 
+.close-modal { position: fixed; top: 30px; right: 50px; font-size: 45px; cursor: pointer; color: #111; z-index: 2100; } 
 
-footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #999; font-weight: 300; } 
+footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #888; } 
 
-@media (max-width: 1200px) { .gallery-grid { column-count: 3; } nav { padding: 20px 40px; } }
+@media (max-width: 1200px) { .gallery-grid { column-count: 3; } }
 @media (max-width: 800px) { 
-    .gallery-grid { column-count: 2; } 
-    nav { grid-template-columns: 1fr; gap: 15px; text-align: center; }
+    nav { padding: 20px 30px; grid-template-columns: 1fr; text-align: center; gap: 15px; } 
     .nav-left, .nav-right { justify-content: center; }
-    .modal-content { grid-template-columns: 1fr; }
+    .gallery-grid { column-count: 2; } 
 }
 </style> 
 </head> 
@@ -127,13 +124,13 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
 
 <nav> 
 <div class="nav-left"> 
-    <a onclick="showAbout()">Par mani</a> 
-    <a onclick="showContacts()">Kontakti</a> 
+<a onclick="showAbout()">Par mani</a> 
+<a onclick="showContacts()">Kontakti</a> 
 </div> 
 <a onclick="showGallery()" class="logo">Dana Lozova</a> 
 <div class="nav-right"> 
-    <a href="https://www.youtube.com/@DanaLozova" target="_blank"><i class="fa-brands fa-youtube"></i></a> 
-    <a href="https://www.instagram.com/utopijas" target="_blank"><i class="fa-brands fa-instagram"></i></a> 
+<a href="https://www.youtube.com/@DanaLozova" target="_blank"><i class="fa-brands fa-youtube"></i></a> 
+<a href="https://www.instagram.com/utopijas" target="_blank"><i class="fa-brands fa-instagram"></i></a> 
 </div> 
 </nav> 
 
@@ -153,111 +150,134 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
 <section class="gallery-section"> 
 <div class="gallery-grid"> 
 
-    <div class="gallery-item grafika" onclick="openModal('video', '4_xtK8zcSp4', 'Zīmētā galva', 'Grafikas animācija')">
-        <img src="2_zimetagalva.gif">
+    <div class="gallery-item grafika" onclick="openModal('video', '4_xtK8zcSp4', 'Zīmētā galva', 'Grafikas darbs / Animācija')">
+        <img src="2_zimetagalva.gif" alt="Zīmētā galva">
     </div>
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'ZefCtI-ZUSU', '3D Animācija', 'Veidots ar Blender')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZefCtI-ZUSU?autoplay=1&mute=1&playlist=ZefCtI-ZUSU&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'ZefCtI-ZUSU', '3D animācija', 'Blender')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZefCtI-ZUSU?autoplay=1&mute=1&playlist=ZefCtI-ZUSU&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item foto" onclick="openModal('series', ['web_bildes/thumbnails/stallis1.jpg', 'web_bildes/stallis2.jpg', 'web_bildes/1_stallis.jpg', 'web_bildes/2_stallis.jpg', 'web_bildes/3_stallis.jpg', 'web_bildes/4_stallis.jpg', 'web_bildes/5_stallis.jpg', 'web_bildes/6_stallis.jpg', 'web_bildes/7_stallis.jpg', 'web_bildes/8_stallis.jpg', 'web_bildes/9_stallis.jpg', 'web_bildes/10_stallis.jpg'], 'Stallis', 'Dokumentālā fotogrāfija')">
+    <div class="gallery-item foto" onclick="openModal('series', [
+        'web_bildes/thumbnails/stallis1.jpg', 'web_bildes/stallis2.jpg', 'web_bildes/1_stallis.jpg', 
+        'web_bildes/2_stallis.jpg', 'web_bildes/3_stallis.jpg', 'web_bildes/4_stallis.jpg',
+        'web_bildes/5_stallis.jpg', 'web_bildes/6_stallis.jpg', 'web_bildes/7_stallis.jpg',
+        'web_bildes/8_stallis.jpg', 'web_bildes/9_stallis.jpg', 'web_bildes/10_stallis.jpg'
+    ], 'Stallis', 'Dokumentālā sērija.', '2024')">
         <img src="web_bildes/thumbnails/stallis1.jpg">
     </div> 
 
     <div class="gallery-item video-darbi" onclick="openModal('video', 'CNqLZs3lMOk', 'Mūzikas video', '2023')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/CNqLZs3lMOk?autoplay=1&mute=1&playlist=CNqLZs3lMOk&loop=1&controls=0"></iframe></div> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/CNqLZs3lMOk?autoplay=1&mute=1&playlist=CNqLZs3lMOk&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item grafika" onclick="openModal('video', 'rvyyLKu2Y9Y', 'Teksts', 'Kustīgā tipogrāfija')">
-        <img src="3_teksts.gif">
+    <div class="gallery-item grafika" onclick="openModal('video', 'rvyyLKu2Y9Y', 'Teksts', 'Kustīgais teksts')">
+        <img src="3_teksts.gif" alt="Teksts">
     </div>
 
-    <div class="gallery-item grafika" onclick="openModal('series', ['web_grafika/102km1.jpg', 'web_grafika/102km2.jpg', 'web_grafika/102_still_3.jpg'], '102 KM', 'Grafikas dizaina projekts')">
-        <img src="web_grafika/102km1.jpg">
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/102km1.jpg', 'web_grafika/102km2.jpg', 'web_grafika/102_still_3.jpg'
+    ], '102 KM', 'Grafikas dizaina projekts.', '2026')">
+        <img src="web_grafika/102km1.jpg" alt="102 KM">
     </div>
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'mBzlKwx7RYk', 'Projekts 3', 'Video darbs')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/mBzlKwx7RYk?autoplay=1&mute=1&playlist=mBzlKwx7RYk&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'mBzlKwx7RYk', 'Projekts 3', '2024')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/mBzlKwx7RYk?autoplay=1&mute=1&playlist=mBzlKwx7RYk&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item foto" onclick="openModal('series', ['web_bildes/thumbnails/mode1.jpg', 'web_bildes/mode2.jpg', 'web_bildes/mode3.jpg', 'web_bildes/mode4.jpg', 'web_bildes/mode5.jpg'], 'Mode', 'Modes fotogrāfija')">
+    <div class="gallery-item foto" onclick="openModal('series', [
+        'web_bildes/thumbnails/mode1.jpg', 'web_bildes/mode2.jpg', 'web_bildes/mode3.jpg', 
+        'web_bildes/mode4.jpg', 'web_bildes/mode5.jpg'
+    ], 'Mode', 'Modes foto sērija.', '2024')">
         <img src="web_bildes/thumbnails/mode1.jpg">
     </div> 
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'yc0NlDLE7mY', 'Projekts 4', 'Video')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yc0NlDLE7mY?autoplay=1&mute=1&playlist=yc0NlDLE7mY&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'yc0NlDLE7mY', 'Projekts 4', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yc0NlDLE7mY?autoplay=1&mute=1&playlist=yc0NlDLE7mY&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/modesflash.jpg', 'Modes Flash')">
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/modesflash.jpg', 'Modes Flash', '2024')">
         <img src="web_bildes/thumbnails/modesflash.jpg">
     </div> 
 
-    <div class="gallery-item grafika" onclick="openModal('image', 'web_grafika/ilustracija.jpg', 'Ilustrācija')">
-        <img src="web_grafika/ilustracija.jpg">
+    <div class="gallery-item grafika" onclick="openModal('image', 'web_grafika/ilustracija.jpg', 'Ilustrācija', '2026')">
+        <img src="web_grafika/ilustracija.jpg" alt="Ilustrācija">
     </div>
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'HIUm2p6JUpQ', 'Projekts 5', 'Video')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/HIUm2p6JUpQ?autoplay=1&mute=1&playlist=HIUm2p6JUpQ&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'HIUm2p6JUpQ', 'Projekts 5', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/HIUm2p6JUpQ?autoplay=1&mute=1&playlist=HIUm2p6JUpQ&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item foto" onclick="openModal('series', ['web_bildes/thumbnails/dudievins1.jpg', 'web_bildes/dudievins2.jpg', 'web_bildes/dudievins3.jpg'], 'Dudievins', 'Portreti')">
+    <div class="gallery-item foto" onclick="openModal('series', [
+        'web_bildes/thumbnails/dudievins1.jpg', 'web_bildes/dudievins2.jpg', 'web_bildes/dudievins3.jpg'
+    ], 'Dudievins', 'Portretu sērija.', '2024')">
         <img src="web_bildes/thumbnails/dudievins1.jpg">
     </div> 
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'lyH9bpc-hcQ', 'Projekts 6', 'Video')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/lyH9bpc-hcQ?autoplay=1&mute=1&playlist=lyH9bpc-hcQ&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'lyH9bpc-hcQ', 'Projekts 6', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/lyH9bpc-hcQ?autoplay=1&mute=1&playlist=lyH9bpc-hcQ&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item grafika" onclick="openModal('series', ['web_grafika/nedienas1.jpg', 'web_grafika/nedienas2.jpg', 'web_grafika/nedienas3.jpg'], 'Nedienas', 'Grafikas darbu cikls')">
-        <img src="web_grafika/nedienas1.jpg">
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/nedienas1.jpg', 'web_grafika/nedienas2.jpg', 'web_grafika/nedienas3.jpg'
+    ], 'Nedienas', 'Vizuālais stāsts.', '2026')">
+        <img src="web_grafika/nedienas1.jpg" alt="Nedienas">
     </div>
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'rbC1cnlFbYc', 'Projekts 7', 'Video')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rbC1cnlFbYc?autoplay=1&mute=1&playlist=rbC1cnlFbYc&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'rbC1cnlFbYc', 'Projekts 7', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rbC1cnlFbYc?autoplay=1&mute=1&playlist=rbC1cnlFbYc&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/blues.jpg', 'Blues')">
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/blues.jpg', 'Blues', '2024')">
         <img src="web_bildes/thumbnails/blues.jpg">
     </div> 
 
-    <div class="gallery-item foto" onclick="openModal('series', ['web_bildes/thumbnails/shutter.jpg', 'web_bildes/shutter2.jpg', 'web_bildes/shutter3.jpg', 'web_bildes/shutter4.jpg'], 'Shutter', 'Eksperimentālā fotogrāfija')">
+    <div class="gallery-item foto" onclick="openModal('series', [
+        'web_bildes/thumbnails/shutter.jpg', 'web_bildes/shutter2.jpg', 'web_bildes/shutter3.jpg', 'web_bildes/shutter4.jpg'
+    ], 'Shutter', 'Eksperimentāls projekts.', '2024')">
         <img src="web_bildes/thumbnails/shutter.jpg">
     </div>
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Projekts 8', 'Video')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qjIZCTrh1Ag?autoplay=1&mute=1&playlist=qjIZCTrh1Ag&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Projekts 8', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qjIZCTrh1Ag?autoplay=1&mute=1&playlist=qjIZCTrh1Ag&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item grafika" onclick="openModal('series', ['web_grafika/zins1.jpg', 'web_grafika/zins2.jpg'], 'Zins', 'Zine dizains')">
-        <img src="web_grafika/zins1.jpg">
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/zins1.jpg', 'web_grafika/zins2.jpg'
+    ], 'Zins', 'Zine.', '2026')">
+        <img src="web_grafika/zins1.jpg" alt="Zins">
     </div>
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'nk4FbV-Fam0', 'Projekts 9', 'Video')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nk4FbV-Fam0?autoplay=1&mute=1&playlist=nk4FbV-Fam0&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'nk4FbV-Fam0', 'Projekts 9', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nk4FbV-Fam0?autoplay=1&mute=1&playlist=nk4FbV-Fam0&loop=1&controls=0"></iframe></div> 
     </div> 
 
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekes.jpg', 'Zeķes')">
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekes.jpg', 'Zeķes', '2024')">
         <img src="web_bildes/thumbnails/zekes.jpg">
     </div>
 
-    <div class="gallery-item grafika" onclick="openModal('series', ['web_grafika/serija1_1.jpg', 'web_grafika/serija1_2.jpg', 'web_grafika/serija1_3.jpg'], 'Sērija I', 'Grafika')">
-        <img src="web_grafika/serija1_1.jpg">
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/serija1_1.jpg', 'web_grafika/serija1_2.jpg', 'web_grafika/serija1_3.jpg'
+    ], 'Sērija I', 'Eksperimenti.', '2026')">
+        <img src="web_grafika/serija1_1.jpg" alt="Sērija 1">
     </div>
 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'FF2eNCD620o', 'Projekts 10', 'Video')"> 
-        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/FF2eNCD620o?autoplay=1&mute=1&playlist=FF2eNCD620o&loop=1&controls=0"></iframe></div> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'FF2eNCD620o', 'Projekts 10', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/FF2eNCD620o?autoplay=1&mute=1&playlist=FF2eNCD620o&loop=1&controls=0"></iframe></div> 
     </div>
 
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekubikses.jpg', 'Zeķubikses')">
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekubikses.jpg', 'Zeķubikses', '2024')">
         <img src="web_bildes/thumbnails/zekubikses.jpg">
     </div>
 
-    <div class="gallery-item grafika" onclick="openModal('series', ['web_grafika/serija2_1.jpg', 'web_grafika/serija2_2.jpg', 'web_grafika/serija2_3.jpg', 'web_grafika/serija2_4.jpg', 'web_grafika/serija2_5.jpg', 'web_grafika/serija2_6.jpg'], 'Sērija II', 'Identitātes pētījums')">
-        <img src="web_grafika/serija2_1.jpg">
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/serija2_1.jpg', 'web_grafika/serija2_2.jpg', 'web_grafika/serija2_3.jpg',
+        'web_grafika/serija2_4.jpg', 'web_grafika/serija2_5.jpg', 'web_grafika/serija2_6.jpg'
+    ], 'Sērija II', 'Identitātes izpēte.', '2026')">
+        <img src="web_grafika/serija2_1.jpg" alt="Sērija 2">
     </div>
 
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/produkts1.jpg', 'Produkts 1')">
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/produkts1.jpg', 'Produkts 1', '2024')">
         <img src="web_bildes/thumbnails/produkts1.jpg">
     </div>
 
@@ -278,7 +298,17 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
 </div> 
 <div class="resume-block"> 
 <h3 class="sub-title">Mediji</h3> 
-<div class="resume-item">Fotografēšana, Grafikas dizains, Video, 3D, Skaņa.</div> 
+<div class="skills-grid"> 
+<div>Fotografēšana</div> <div>Grafikas dizains</div> <div>Video</div> <div>3D</div> <div>Skaņa</div> 
+</div> 
+</div> 
+<div class="resume-block"> 
+<h3 class="sub-title">Pieredze</h3> 
+<div class="resume-item"> <strong>Prakses vietas</strong> 
+2022: Drukas aģentūra SIA "Abcprint"<br>
+2023: Drukas aģentūra SIA "Fortius"<br>
+2023: Apģērbu un aksesuāru veikala "Selvatika" grafikas dizaina izveide, Barselona
+</div> 
 </div> 
 </div> 
 </div> 
@@ -286,36 +316,47 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
 
 <section id="contact-section">
 <div class="contact-container">
-    <div class="contact-image"> <img src="images/fons.svg"> </div>
+    <div class="contact-image"> <img src="images/fons.svg" alt="Kontakti"> </div>
     <div class="contact-text">
         <h1 class="section-title">Kontakti</h1>
         <div class="resume-block">
             <h3 class="sub-title">Sazinies ar mani</h3>
-            <a href="mailto:lozovadana@gmail.com" class="contact-link-item">lozovadana@gmail.com</a>
-            <a href="https://www.instagram.com/utopijas" target="_blank" class="contact-link-item">Instagram</a>
-            <a href="https://www.youtube.com/@DanaLozova" target="_blank" class="contact-link-item">YouTube</a>
+            <div class="contact-links-list">
+                <a href="mailto:lozovadana@gmail.com" class="contact-link-item">lozovadana@gmail.com</a>
+                <a href="https://www.instagram.com/utopijas" target="_blank" class="contact-link-item">Instagram</a>
+                <a href="https://www.youtube.com/@DanaLozova" target="_blank" class="contact-link-item">YouTube</a>
+            </div>
         </div>
     </div>
 </div>
 </section>
 
-<footer> 
-    <div class="footer-brand">Dana Lozova</div> 
-    <div class="footer-copy">&copy; 2026</div> 
-</footer> 
+<footer> <div class="footer-brand">Dana Lozova</div> <div class="footer-copy">&copy; 2026</div> </footer> 
 
 <div id="workModal" class="modal"> 
 <span class="close-modal" onclick="closeModal()">&times;</span> 
 <div class="modal-content"> 
-    <div id="modalMedia"></div> 
+    <div class="slider-container">
+        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+        <div id="modalMedia"></div> 
+        <button class="nav-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+        <div id="thumbBar" class="thumb-bar"></div>
+    </div>
     <div class="modal-info"> 
         <h2 id="modalTitle"></h2> 
         <div class="description" id="modalDesc"></div> 
+        <div class="info-grid"> 
+            <span class="info-label"></span> 
+            <div class="info-value" id="modalExtra"></div> 
+        </div> 
     </div> 
 </div> 
 </div> 
 
 <script> 
+let currentImages = [];
+let currentIndex = 0;
+
 function showAbout() { 
     document.getElementById('portfolio-content').style.display = 'none'; 
     document.getElementById('contact-section').style.display = 'none';
@@ -339,38 +380,62 @@ function filterGallery(category, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); 
     btn.classList.add('active'); 
     document.querySelectorAll('.gallery-item').forEach(item => { 
-        item.style.display = (category === 'all' || item.classList.contains(category)) ? 'inline-block' : 'none'; 
+        if (category === 'all' || item.classList.contains(category)) item.style.display = 'inline-block'; 
+        else item.style.display = 'none'; 
     }); 
 } 
 
-function openModal(type, source, title, desc) { 
+function openModal(type, source, title, desc, extra) { 
     const modal = document.getElementById('workModal'); 
     const media = document.getElementById('modalMedia'); 
+    const thumbBar = document.getElementById('thumbBar');
     document.getElementById('modalTitle').innerText = title || ""; 
     document.getElementById('modalDesc').innerText = desc || ""; 
-    media.innerHTML = ''; 
+    document.getElementById('modalExtra').innerHTML = extra || ""; 
+    media.innerHTML = ''; thumbBar.innerHTML = ''; currentIndex = 0;
 
     if (type === 'video') { 
+        currentImages = [];
         media.innerHTML = `<div style="width:100%; position:relative;padding-bottom:56.25%;height:0;background:#000;"> 
         <iframe src="https://www.youtube.com/embed/${source}?autoplay=1&rel=0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe> 
         </div>`; 
+        document.querySelectorAll('.nav-btn').forEach(b => b.style.display = 'none');
     } else { 
-        let images = Array.isArray(source) ? source : [source];
-        images.forEach(imgUrl => {
+        currentImages = Array.isArray(source) ? source : [source];
+        document.querySelectorAll('.nav-btn').forEach(b => b.style.display = currentImages.length > 1 ? 'block' : 'none');
+        currentImages.forEach((imgUrl, index) => {
             const img = document.createElement('img');
-            img.src = imgUrl;
+            img.src = imgUrl; img.className = 'main-slide' + (index === 0 ? ' active' : '');
             media.appendChild(img);
+            if(currentImages.length > 1) {
+                const thumb = document.createElement('img');
+                thumb.src = imgUrl; thumb.className = 'thumb-item' + (index === 0 ? ' active' : '');
+                thumb.onclick = () => goToSlide(index); thumbBar.appendChild(thumb);
+            }
         });
     } 
     modal.style.display = 'block'; document.body.style.overflow = 'hidden'; 
 } 
 
+function changeSlide(n) {
+    currentIndex += n;
+    if (currentIndex >= currentImages.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = currentImages.length - 1;
+    updateSlider();
+}
+function goToSlide(n) { currentIndex = n; updateSlider(); }
+function updateSlider() {
+    const slides = document.querySelectorAll('.main-slide');
+    const thumbs = document.querySelectorAll('.thumb-item');
+    slides.forEach((s, i) => s.classList.toggle('active', i === currentIndex));
+    thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+}
 function closeModal() { 
     document.getElementById('workModal').style.display = 'none'; 
     document.getElementById('modalMedia').innerHTML = ''; 
     document.body.style.overflow = 'auto'; 
 } 
-window.onclick = function(e) { if (e.target == document.getElementById('workModal')) closeModal(); } 
+window.onclick = function(event) { if (event.target == document.getElementById('workModal')) closeModal(); } 
 </script> 
 </body>
 </html>
