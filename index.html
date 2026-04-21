@@ -27,14 +27,20 @@ nav { position: sticky; top: 0; width: 100%; padding: 20px 80px; display: flex; 
 .filter-btn { font-family: 'Nunito', sans-serif; background: none; border: none; padding: 10px 25px; cursor: pointer; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #111; opacity: 0.5; transition: 0.3s; font-weight: 600; } 
 .filter-btn.active { opacity: 1; color: rgb(0, 102, 255); font-weight: 700; } 
 
-/* GALERIJA */ 
+/* GALERIJA - KOMPAKTS UN SMALKS REŽĢIS */ 
 .gallery-section { padding: 0 40px 100px; flex-grow: 1; } 
-.gallery-grid { column-count: 4; column-gap: 15px; max-width: 2400px; margin: 0 auto; } 
-.gallery-item { display: inline-block; width: 100%; margin-bottom: 15px; break-inside: avoid; position: relative; cursor: pointer; } 
+.gallery-grid { 
+    column-count: 5; 
+    column-gap: 15px; 
+    max-width: 1500px; 
+    margin: 0 auto; 
+} 
+.gallery-item { display: inline-block; width: 100%; margin-bottom: 15px; break-inside: avoid; position: relative; cursor: pointer; transition: 0.3s ease; } 
 .gallery-item img { width: 100%; height: auto; display: block; border-radius: 2px; transition: 0.3s; } 
+.gallery-item:hover { transform: scale(1.02); z-index: 5; }
 .gallery-item:hover img { filter: brightness(0.8); }
 
-.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; pointer-events: none; } 
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 2px; pointer-events: none; } 
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; } 
 
 /* --- PAR MANI UN KONTAKTI --- */
@@ -73,6 +79,9 @@ nav { position: sticky; top: 0; width: 100%; padding: 20px 80px; display: flex; 
 .close-modal { position: fixed; top: 30px; right: 50px; font-size: 45px; cursor: pointer; color: #111; z-index: 2100; } 
 
 footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #888; } 
+
+@media (max-width: 1200px) { .gallery-grid { column-count: 3; } }
+@media (max-width: 800px) { .gallery-grid { column-count: 2; } nav { padding: 20px 30px; } }
 </style> 
 </head> 
 <body> 
@@ -109,39 +118,8 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
         <img src="2_zimetagalva.gif" alt="Zīmētā galva">
     </div>
 
-    <div class="gallery-item grafika" onclick="openModal('video', 'rvyyLKu2Y9Y', 'Teksts', 'Grafikas darbs / Kustīgais teksts')">
-        <img src="3_teksts.gif" alt="Teksts">
-    </div>
-
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'ZefCtI-ZUSU', '3D animācija', 'Veidota programmā Blender')"> 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'ZefCtI-ZUSU', '3D animācija', 'Blender')"> 
     <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZefCtI-ZUSU?autoplay=1&mute=1&playlist=ZefCtI-ZUSU&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'CNqLZs3lMOk', 'Mūzikas video', 'Mūzika: Ziemas Aukstais Sniegs', '2023')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/CNqLZs3lMOk?autoplay=1&mute=1&playlist=CNqLZs3lMOk&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'mBzlKwx7RYk', 'Projekts 3', 'Video apraksts...', '2024')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/mBzlKwx7RYk?autoplay=1&mute=1&playlist=mBzlKwx7RYk&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'yc0NlDLE7mY', 'Projekts 4', '...', '...')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yc0NlDLE7mY?autoplay=1&mute=1&playlist=yc0NlDLE7mY&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'HIUm2p6JUpQ', 'Projekts 5', '...', '...')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/HIUm2p6JUpQ?autoplay=1&mute=1&playlist=HIUm2p6JUpQ&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'lyH9bpc-hcQ', 'Projekts 6', '...', '...')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/lyH9bpc-hcQ?autoplay=1&mute=1&playlist=lyH9bpc-hcQ&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'rbC1cnlFbYc', 'Projekts 7', '...', '...')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rbC1cnlFbYc?autoplay=1&mute=1&playlist=rbC1cnlFbYc&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Projekts 8', '...', '...')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qjIZCTrh1Ag?autoplay=1&mute=1&playlist=qjIZCTrh1Ag&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'nk4FbV-Fam0', 'Projekts 9', '...', '...')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nk4FbV-Fam0?autoplay=1&mute=1&playlist=nk4FbV-Fam0&loop=1&controls=0"></iframe></div> 
-    </div> 
-    <div class="gallery-item video-darbi" onclick="openModal('video', 'FF2eNCD620o', 'Projekts 10', '...', '...')"> 
-    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/FF2eNCD620o?autoplay=1&mute=1&playlist=FF2eNCD620o&loop=1&controls=0"></iframe></div> 
     </div> 
 
     <div class="gallery-item foto" onclick="openModal('series', [
@@ -153,11 +131,45 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
         <img src="web_bildes/thumbnails/stallis1.jpg">
     </div> 
 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'CNqLZs3lMOk', 'Mūzikas video', '2023')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/CNqLZs3lMOk?autoplay=1&mute=1&playlist=CNqLZs3lMOk&loop=1&controls=0"></iframe></div> 
+    </div> 
+
+    <div class="gallery-item grafika" onclick="openModal('video', 'rvyyLKu2Y9Y', 'Teksts', 'Kustīgais teksts')">
+        <img src="3_teksts.gif" alt="Teksts">
+    </div>
+
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/102km1.jpg', 'web_grafika/102km2.jpg', 'web_grafika/102_still_3.jpg'
+    ], '102 KM', 'Grafikas dizaina projekts.', '2026')">
+        <img src="web_grafika/102km1.jpg" alt="102 KM">
+    </div>
+
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'mBzlKwx7RYk', 'Projekts 3', '2024')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/mBzlKwx7RYk?autoplay=1&mute=1&playlist=mBzlKwx7RYk&loop=1&controls=0"></iframe></div> 
+    </div> 
+
     <div class="gallery-item foto" onclick="openModal('series', [
         'web_bildes/thumbnails/mode1.jpg', 'web_bildes/mode2.jpg', 'web_bildes/mode3.jpg', 
         'web_bildes/mode4.jpg', 'web_bildes/mode5.jpg'
     ], 'Mode', 'Modes foto sērija.', '2024')">
         <img src="web_bildes/thumbnails/mode1.jpg">
+    </div> 
+
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'yc0NlDLE7mY', 'Projekts 4', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/yc0NlDLE7mY?autoplay=1&mute=1&playlist=yc0NlDLE7mY&loop=1&controls=0"></iframe></div> 
+    </div> 
+
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/modesflash.jpg', 'Modes Flash', '2024')">
+        <img src="web_bildes/thumbnails/modesflash.jpg">
+    </div> 
+
+    <div class="gallery-item grafika" onclick="openModal('image', 'web_grafika/ilustracija.jpg', 'Ilustrācija', '2026')">
+        <img src="web_grafika/ilustracija.jpg" alt="Ilustrācija">
+    </div>
+
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'HIUm2p6JUpQ', 'Projekts 5', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/HIUm2p6JUpQ?autoplay=1&mute=1&playlist=HIUm2p6JUpQ&loop=1&controls=0"></iframe></div> 
     </div> 
 
     <div class="gallery-item foto" onclick="openModal('series', [
@@ -166,56 +178,71 @@ footer { padding: 40px 80px; border-top: 1px solid #eee; display: flex; justify-
         <img src="web_bildes/thumbnails/dudievins1.jpg">
     </div> 
 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'lyH9bpc-hcQ', 'Projekts 6', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/lyH9bpc-hcQ?autoplay=1&mute=1&playlist=lyH9bpc-hcQ&loop=1&controls=0"></iframe></div> 
+    </div> 
+
+    <div class="gallery-item grafika" onclick="openModal('series', [
+        'web_grafika/nedienas1.jpg', 'web_grafika/nedienas2.jpg', 'web_grafika/nedienas3.jpg'
+    ], 'Nedienas', 'Vizuālais stāsts.', '2026')">
+        <img src="web_grafika/nedienas1.jpg" alt="Nedienas">
+    </div>
+
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'rbC1cnlFbYc', 'Projekts 7', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/rbC1cnlFbYc?autoplay=1&mute=1&playlist=rbC1cnlFbYc&loop=1&controls=0"></iframe></div> 
+    </div> 
+
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/blues.jpg', 'Blues', '2024')">
+        <img src="web_bildes/thumbnails/blues.jpg">
+    </div> 
+
     <div class="gallery-item foto" onclick="openModal('series', [
         'web_bildes/thumbnails/shutter.jpg', 'web_bildes/shutter2.jpg', 'web_bildes/shutter3.jpg', 'web_bildes/shutter4.jpg'
     ], 'Shutter', 'Eksperimentāls projekts.', '2024')">
         <img src="web_bildes/thumbnails/shutter.jpg">
-    </div> 
-
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/modesflash.jpg', 'Modes Flash', 'Studijas darbs.', '2024')">
-        <img src="web_bildes/thumbnails/modesflash.jpg">
-    </div> 
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/blues.jpg', 'Blues', 'Portrets.', '2024')">
-        <img src="web_bildes/thumbnails/blues.jpg">
-    </div> 
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekes.jpg', 'Zeķes', 'Produkta fotogrāfija.', '2024')">
-        <img src="web_bildes/thumbnails/zekes.jpg" alt="Zeķes">
-    </div>
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekubikses.jpg', 'Zeķubikses', 'Produkta fotogrāfija.', '2024')">
-        <img src="web_bildes/thumbnails/zekubikses.jpg" alt="Zeķubikses">
-    </div>
-    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/produkts1.jpg', 'Produkts 1', 'Dizaina sērija.', '2024')">
-        <img src="web_bildes/thumbnails/produkts1.jpg" alt="Produkts 1">
     </div>
 
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Projekts 8', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/qjIZCTrh1Ag?autoplay=1&mute=1&playlist=qjIZCTrh1Ag&loop=1&controls=0"></iframe></div> 
+    </div> 
+
     <div class="gallery-item grafika" onclick="openModal('series', [
-        'web_grafika/102km1.jpg', 'web_grafika/102km2.jpg', 'web_grafika/102_still_3.jpg'
-    ], '102 KM', 'Grafikas dizaina projekts.', '2026')">
-        <img src="web_grafika/102km1.jpg" alt="102 KM">
+        'web_grafika/zins1.jpg', 'web_grafika/zins2.jpg'
+    ], 'Zins', 'Zine.', '2026')">
+        <img src="web_grafika/zins1.jpg" alt="Zins">
     </div>
-    <div class="gallery-item grafika" onclick="openModal('image', 'web_grafika/ilustracija.jpg', 'Ilustrācija', 'Digitālais zīmējums.', '2026')">
-        <img src="web_grafika/ilustracija.jpg" alt="Ilustrācija">
+
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'nk4FbV-Fam0', 'Projekts 9', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/nk4FbV-Fam0?autoplay=1&mute=1&playlist=nk4FbV-Fam0&loop=1&controls=0"></iframe></div> 
+    </div> 
+
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekes.jpg', 'Zeķes', '2024')">
+        <img src="web_bildes/thumbnails/zekes.jpg">
     </div>
-    <div class="gallery-item grafika" onclick="openModal('series', [
-        'web_grafika/nedienas1.jpg', 'web_grafika/nedienas2.jpg', 'web_grafika/nedienas3.jpg'
-    ], 'Nedienas', 'Vizuālais stāsts / sērija.', '2026')">
-        <img src="web_grafika/nedienas1.jpg" alt="Nedienas">
-    </div>
+
     <div class="gallery-item grafika" onclick="openModal('series', [
         'web_grafika/serija1_1.jpg', 'web_grafika/serija1_2.jpg', 'web_grafika/serija1_3.jpg'
-    ], 'Sērija I', 'Grafikas dizaina eksperimenti.', '2026')">
+    ], 'Sērija I', 'Eksperimenti.', '2026')">
         <img src="web_grafika/serija1_1.jpg" alt="Sērija 1">
     </div>
+
+    <div class="gallery-item video-darbi" onclick="openModal('video', 'FF2eNCD620o', 'Projekts 10', '...')"> 
+    <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/FF2eNCD620o?autoplay=1&mute=1&playlist=FF2eNCD620o&loop=1&controls=0"></iframe></div> 
+    </div>
+
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekubikses.jpg', 'Zeķubikses', '2024')">
+        <img src="web_bildes/thumbnails/zekubikses.jpg">
+    </div>
+
     <div class="gallery-item grafika" onclick="openModal('series', [
         'web_grafika/serija2_1.jpg', 'web_grafika/serija2_2.jpg', 'web_grafika/serija2_3.jpg',
         'web_grafika/serija2_4.jpg', 'web_grafika/serija2_5.jpg', 'web_grafika/serija2_6.jpg'
-    ], 'Sērija II', 'Identitātes un stila izpēte.', '2026')">
+    ], 'Sērija II', 'Identitātes izpēte.', '2026')">
         <img src="web_grafika/serija2_1.jpg" alt="Sērija 2">
     </div>
-    <div class="gallery-item grafika" onclick="openModal('series', [
-        'web_grafika/zins1.jpg', 'web_grafika/zins2.jpg'
-    ], 'Zins', 'Pašizdots izdevums / Zine.', '2026')">
-        <img src="web_grafika/zins1.jpg" alt="Zins">
+
+    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/produkts1.jpg', 'Produkts 1', '2024')">
+        <img src="web_bildes/thumbnails/produkts1.jpg">
     </div>
 
 </div> 
