@@ -8,7 +8,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Nunito:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style> 
 /* --- PAMATA STILI --- */ 
-* { margin: 0; padding: 0; box-sizing: border-box; } 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    /* Aizsardzība pret iezīmēšanu */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+} 
+/* Atļauj iezīmēt tekstu tikai aprakstos */
+.description, .info-value, .resume-item {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
 body { font-family: 'Nunito', sans-serif; background: #fff; color: #111; overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; } 
 
 /* --- NAVIGĀCIJA --- */ 
@@ -56,7 +71,7 @@ nav {
 
 /* --- HERO SEKCIJA --- */ 
 .hero { height: 75vh; width: 100%; position: relative; overflow: hidden; background: #000; z-index: 1; } 
-.hero video { width: 100%; height: 100%; object-fit: cover; } 
+.hero video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; } 
 .header-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('images/fons.svg'); background-size: cover; background-position: center; z-index: 2; pointer-events: none; mix-blend-mode: screen; opacity: 0.8; } 
 
 /* FILTRI */ 
@@ -69,7 +84,7 @@ nav {
 .gallery-section { padding: 0 40px 100px; flex-grow: 1; } 
 .gallery-grid { column-count: 5; column-gap: 15px; max-width: 1500px; margin: 0 auto; } 
 .gallery-item { display: inline-block; width: 100%; margin-bottom: 15px; break-inside: avoid; position: relative; cursor: pointer; transition: 0.3s ease; } 
-.gallery-item img { width: 100%; height: auto; display: block; border-radius: 2px; transition: 0.3s; } 
+.gallery-item img { width: 100%; height: auto; display: block; border-radius: 2px; transition: 0.3s; pointer-events: none; } 
 .gallery-item:hover { transform: scale(1.02); z-index: 5; }
 .gallery-item:hover img { filter: brightness(0.8); }
 
@@ -81,7 +96,7 @@ nav {
 .modal-content { max-width: 1500px; margin: 50px auto; padding: 0 50px; display: grid; grid-template-columns: 1.8fr 1fr; gap: 60px; } 
 .slider-container { position: relative; width: 100%; text-align: center; } 
 #modalMedia { width: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center; } 
-.main-slide { max-width: 100%; max-height: 80vh; object-fit: contain; display: none; } 
+.main-slide { max-width: 100%; max-height: 80vh; object-fit: contain; display: none; pointer-events: none; } 
 .main-slide.active { display: block; } 
 
 .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10; padding: 10px; transition: 0.2s; } 
@@ -95,7 +110,7 @@ nav {
 .close-modal:hover { opacity: 0.6; transform: scale(1.1); }
 
 .thumb-bar { display: flex; gap: 8px; margin-top: 20px; overflow-x: auto; justify-content: center; padding: 10px; } 
-.thumb-item { width: 60px; height: 60px; object-fit: cover; cursor: pointer; opacity: 0.4; border: 2px solid transparent; } 
+.thumb-item { width: 60px; height: 60px; object-fit: cover; cursor: pointer; opacity: 0.4; border: 2px solid transparent; pointer-events: auto; } 
 .thumb-item.active { opacity: 1; border-color: rgb(0, 102, 255); } 
 
 .modal-info h2 { font-size: 26px; color: rgb(0, 102, 255); text-transform: uppercase; margin-bottom: 15px; font-weight: 700; } 
@@ -107,7 +122,18 @@ nav {
 /* --- PAR MANI --- */
 #about-section { display: none; padding: 80px 40px; max-width: 1200px; margin: 0 auto; flex-grow: 1; } 
 .about-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; } 
-.about-image img { width: 100%; border-radius: 4px; } 
+.about-image img { width: 100%; border-radius: 4px; pointer-events: none; } 
+
+/* Jauns stils vārda attēlam */
+.about-name-img { 
+    width: 380px; 
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 20px; 
+    display: block;
+    pointer-events: none;
+}
+
 .section-title { font-size: 40px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; color: #111; font-weight: 700; } 
 .sub-title { text-transform: uppercase; font-size: 12px; letter-spacing: 2px; color: rgb(0, 102, 255); margin-bottom: 15px; font-weight: 700; } 
 .resume-item { margin-bottom: 15px; font-size: 14px; line-height: 1.5; color: #111; } 
@@ -124,7 +150,7 @@ footer {
     font-size: 13px; 
     color: #888; 
 } 
-.footer-email { color: #111; text-decoration: none; font-weight: 500; transition: 0.3s; }
+.footer-email { color: #111; text-decoration: none; font-weight: 500; transition: 0.3s; cursor: pointer; }
 .footer-email:hover { color: rgb(0, 102, 255); }
 
 /* ============================================
@@ -193,6 +219,9 @@ footer {
     }
     .about-container { grid-template-columns: 1fr; gap: 28px; }
     .about-image { max-width: 240px; margin: 0 auto; }
+    
+    .about-name-img { width: 280px; margin: 0 auto 20px; }
+
     .section-title { font-size: 26px; letter-spacing: 2px; margin-bottom: 14px; }
     .sub-title { font-size: 11px; margin-bottom: 8px; margin-top: 22px; }
     .resume-item { font-size: 13px; margin-bottom: 10px; }
@@ -252,10 +281,10 @@ footer {
 </div> 
 
 <section class="gallery-section"> 
-<div class="gallery-grid"> 
+<div class="gallery-grid" id="mainGallery"> 
 
     <div class="gallery-item grafika" onclick="openModal('video', '4_xtK8zcSp4', 'ES_2. gif', 'Daļa no “pixel gif” sērijas. Apvienojumā ar html kodu veido bezgalīgu ciklisku kustību.', '2025')">
-        <img src="2_zimetagalva.gif" alt="Zīmētā galva">
+        <img src="2_zimetagalva.gif" alt="Zīmētā galva" ondragstart="return false;">
     </div>
 
     <div class="gallery-item video-darbi" onclick="openModal('video', 'ZefCtI-ZUSU', 'Rhythm is a dancer!', '3D animācija izmantojot programmu Blender.','2025')"> 
@@ -277,7 +306,7 @@ Kompozīcijas veidotas vizuāli vienādos krāsu toņos un izkārotas pielietojo
 
 Katrs priekšmets ir nokalpojis savu laiku, taču ir sapinies vectēva krāmu kolekcijā. Ko tomēr mest ārā, un ko pietaupīt?`, 
     '2023')">
-    <img src="web_bildes/thumbnails/stallis1.jpg">
+    <img src="web_bildes/thumbnails/stallis1.jpg" ondragstart="return false;">
 </div>
 
     <div class="gallery-item video-darbi" onclick="openModal('video', 'CNqLZs3lMOk', 'Mūzikas video', 'Dziesma - Ziemas Aukstais Sniegs, Hipstokrātija.', '2025')"> 
@@ -285,7 +314,7 @@ Katrs priekšmets ir nokalpojis savu laiku, taču ir sapinies vectēva krāmu ko
     </div> 
 
     <div class="gallery-item grafika" onclick="openModal('video', 'rvyyLKu2Y9Y', 'ES_AR_PUTNIEM. gif','Daļa no ”pixel gif”sērijas. Apvienojumā ar html kodu veido bezgalīgu ciklisku kustību.', '2025')">
-        <img src="3_teksts.gif" alt="Teksts">
+        <img src="3_teksts.gif" alt="Teksts" ondragstart="return false;">
     </div>
 
    <div class="gallery-item grafika" onclick="openModal('series', [
@@ -294,7 +323,7 @@ Katrs priekšmets ir nokalpojis savu laiku, taču ir sapinies vectēva krāmu ko
     'Īsfilmas “102KM” plakāti', 
     'Plakāti LKA Nacionālās Filmu skolas studentu īsfilmai “102KM”. Režisors: Edgars Haritončenko.', 
     '2025')">
-    <img src="web_grafika/102km1.jpg" alt="102 KM">
+    <img src="web_grafika/102km1.jpg" alt="102 KM" ondragstart="return false;">
 </div>
 
     <div class="gallery-item video-darbi" onclick="openModal('video', 'mBzlKwx7RYk', 'Arhīvs no Jaunmokām', 'Cikliska stopkadru animācija.', '2025')"> 
@@ -305,7 +334,7 @@ Katrs priekšmets ir nokalpojis savu laiku, taču ir sapinies vectēva krāmu ko
         'web_bildes/thumbnails/mode1.jpg', 'web_bildes/mode2.jpg', 'web_bildes/mode3.jpg', 
         'web_bildes/mode4.jpg', 'web_bildes/mode5.jpg'
     ], 'Mode', 'Vintage apģērbu fotosesija.', '2025')">
-        <img src="web_bildes/thumbnails/mode1.jpg">
+        <img src="web_bildes/thumbnails/mode1.jpg" ondragstart="return false;">
     </div> 
 
     <div class="gallery-item video-darbi" onclick="openModal('video', 'yc0NlDLE7mY', 'Bauhaus animācija', 'Bauhaus plakāta animācija programmā Adobe After Effects.', '2021')"> 
@@ -313,11 +342,11 @@ Katrs priekšmets ir nokalpojis savu laiku, taču ir sapinies vectēva krāmu ko
     </div> 
 
     <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/modesflash.jpg', 'Modes fotogrāfija', '2022')">
-        <img src="web_bildes/thumbnails/modesflash.jpg">
+        <img src="web_bildes/thumbnails/modesflash.jpg" ondragstart="return false;">
     </div> 
 
     <div class="gallery-item grafika" onclick="openModal('image', 'web_grafika/ilustracija.jpg', 'Ilustrācija', '2023')">
-        <img src="web_grafika/ilustracija.jpg" alt="Ilustrācija">
+        <img src="web_grafika/ilustracija.jpg" alt="Ilustrācija" ondragstart="return false;">
     </div>
 
     <div class="gallery-item video-darbi" onclick="openModal('video', 'HIUm2p6JUpQ', 'Teksta animācija', 'Guntara Rača dzejas rindu animācija.', '2021')"> 
@@ -332,7 +361,7 @@ Katrs priekšmets ir nokalpojis savu laiku, taču ir sapinies vectēva krāmu ko
     'Dudieviņš', 
     'Fotosērija iedvesmojoties no Imanta Kalniņa dziesmas “Dūdieviņš”. \n\n Galvenie fakti par dūdieviņu: Tas ir neliels vai vidēja lieluma bridējputns. Tas uzturas ūdenstilpju tuvumā, smiltājos vai pļavās.', 
     '2024')">
-    <img src="web_bildes/thumbnails/dudievins1.jpg">
+    <img src="web_bildes/thumbnails/dudievins1.jpg" ondragstart="return false;">
 </div>
 
    <div class="gallery-item video-darbi" onclick="openModal('video', 'lyH9bpc-hcQ', 'SKAT-ES-NE-DIENAS', 'Iedvesmu rosinošs un radošumu attīstošs grāmatu komplekts \“NE-dienasgrāmata\” un \“Skaties skat-ES\”. \n\n Komplekta pirmajā daļā \“NE-dienasgrāmata\” autore atspoguļo sava prāta radošo procesu, veido atsauces uz mākslas skolu, tajā pavadīto laiku un piedzīvoto. Materiālā iekļautas fotogrāfijas, ilustrācijas, grafikas dizaina un teksta elementi, panākot eksperimentālu estētiku. \n\n Komplekta otrajā daļā \“Skaties skat-ES\” iekļauti dažādi iedvesmu rosinoši un absurdi uzdevumi, lai palīdzētu mākslu skolu audzēkņiem neizdegt un saglabāt savu radošumu ārpus skolas. \n\n 2024')"> 
@@ -353,7 +382,7 @@ Komplekta otrajā daļā “Skaties skat-ES” iekļauti dažādi iedvesmu rosin
 
 Abās komplekta daļās saglabāti vienojoši stilistikas elementi. Komplekta mērķis ir parādīt to, ka nepieciešams meklēt iedvesmu ikdienišķajā.`, 
     '2024')">
-    <img src="web_grafika/nedienas1.jpg" alt="Nedienas">
+    <img src="web_grafika/nedienas1.jpg" alt="Nedienas" ondragstart="return false;">
 </div>
 
    <div class="gallery-item video-darbi" onclick="openModal('video', 'rbC1cnlFbYc', '“Palīgā!”', 'Cikliska stopkadru animācija. \n\n 2024')"> 
@@ -363,7 +392,7 @@ Abās komplekta daļās saglabāti vienojoši stilistikas elementi. Komplekta m�
 </div>
 
     <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/blues.jpg', 'Blues', 'Fotogrāfija.', '2024')">
-        <img src="web_bildes/thumbnails/blues.jpg">
+        <img src="web_bildes/thumbnails/blues.jpg" ondragstart="return false;">
     </div> 
 
    <div class="gallery-item foto" onclick="openModal('series', [
@@ -377,10 +406,10 @@ Abās komplekta daļās saglabāti vienojoši stilistikas elementi. Komplekta m�
 
 Eksperimenti ar kameras slēdža ātrumu.`, 
     '2025')">
-    <img src="web_bildes/thumbnails/shutter.jpg">
+    <img src="web_bildes/thumbnails/shutter.jpg" ondragstart="return false;">
 </div>
 
-   <div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Laika mikrointervāli', 'Video darbs, kas pēta laika mikrointervālus — tos gandrīz neuztveramos nogriežņus, kuros pieredze vēl nav nostiprinājusies skaidrā formā. Tie eksistē starp atmiņu un apzināšanos, starp redzēto un saprasto, starp neredzēto, bet pašsaprotamo. \n\n Video materiālā intervāli tiek atspoguļoti izmantojot atkārtojumu, fragmentāciju un sinhronitātes nobīdes. \n\n Darbs pievērš uzmanību pašam uztveres procesam un tā trauslumam. \n\n 2025')"> 
+   <div class="gallery-item video-darbi" onclick="openModal('video', 'qjIZCTrh1Ag', 'Laika mikrointervāli', 'Video darbs, kas pēta laika mikrointervālus... \n\n 2025')"> 
     <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/qjIZCTrh1Ag?autoplay=1&mute=1&playlist=qjIZCTrh1Ag&loop=1&controls=0"></iframe>
     </div> 
@@ -395,7 +424,7 @@ Eksperimenti ar kameras slēdža ātrumu.`,
 
 Drukāts divos toņos, ar risogrāfu.`, 
     '2022')">
-    <img src="web_grafika/zins1.jpg" alt="Dzejas zīns">
+    <img src="web_grafika/zins1.jpg" alt="Dzejas zīns" ondragstart="return false;">
 </div>
    <div class="gallery-item video-darbi" onclick="openModal('video', 'nk4FbV-Fam0', 'Rīgas apskaņojums', 'Rīgas pilsētvides skaņas pavadījuma izveide. \n\n 2026')"> 
     <div class="video-wrapper">
@@ -405,14 +434,14 @@ Drukāts divos toņos, ar risogrāfu.`,
 
     <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekes.jpg', 'Produkta fotogrāfija', `Konceptuāla produkta fotogrāfija.
 Produkts: caurumainas zeķes.`, '2025')">
-    <img src="web_bildes/thumbnails/zekes.jpg">
+    <img src="web_bildes/thumbnails/zekes.jpg" ondragstart="return false;">
 </div>
    <div class="gallery-item grafika" onclick="openModal('series', [
         'web_grafika/serija1_1.jpg', 
         'web_grafika/serija1_2.jpg', 
         'web_grafika/serija1_3.jpg'
     ], 'Svina Garša', '“Mixed media” dizaina darbs iedvesmojoties no \nMāra Bērziņa romāna “Svina garša”.', '2023')">
-    <img src="web_grafika/serija1_1.jpg" alt="Svina Garša">
+    <img src="web_grafika/serija1_1.jpg" alt="Svina Garša" ondragstart="return false;">
 </div>
     <div class="gallery-item video-darbi" onclick="openModal('video', 'FF2eNCD620o', 'Bolt vai Bolt?', 'Bolt skūteru un kurjeru dokumentācija Rīgas centra apkārtnē. \n\n 2025')"> 
     <div class="video-wrapper">
@@ -421,7 +450,7 @@ Produkts: caurumainas zeķes.`, '2025')">
 </div>
 
    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/zekubikses.jpg', 'Konceptuāla fotogrāfija', `Kā galvenais elements izvēlētas zeķubikses.`, '2022')">
-    <img src="web_bildes/thumbnails/zekubikses.jpg">
+    <img src="web_bildes/thumbnails/zekubikses.jpg" ondragstart="return false;">
 </div>
 
    <div class="gallery-item grafika" onclick="openModal('series', [
@@ -433,14 +462,12 @@ Produkts: caurumainas zeķes.`, '2025')">
         'web_grafika/serija2_6.jpg'
     ], 
     '“Analfabēts”', 
-    `Alfabētiska ilustrāciju sērija “Analfabēts”
-
-Katram latviešu alfabēta burtam izveidota ilustrācija, kas ierastajos alfabētos netiktu izmantota jeb pieaugušā alfabēts.`, 
+    `Alfabētiska ilustrāciju sērija “Analfabēts”...`, 
     '2025')">
-    <img src="web_grafika/serija2_1.jpg" alt="Analfabēts">
+    <img src="web_grafika/serija2_1.jpg" alt="Analfabēts" ondragstart="return false;">
 </div>
    <div class="gallery-item foto" onclick="openModal('image', 'web_bildes/thumbnails/produkts1.jpg', 'Produkta fotogrāfija', `“Gardu muti” upeņu limonādei.`, '2022')">
-    <img src="web_bildes/thumbnails/produkts1.jpg">
+    <img src="web_bildes/thumbnails/produkts1.jpg" ondragstart="return false;">
 </div>
 
 </div> 
@@ -449,9 +476,9 @@ Katram latviešu alfabēta burtam izveidota ilustrācija, kas ierastajos alfabē
 
 <section id="about-section"> 
 <div class="about-container"> 
-<div class="about-image"> <img src="images/parmani.png" alt="Dana Lozova"> </div> 
+<div class="about-image"> <img src="images/parmani.png" alt="Dana Lozova" ondragstart="return false;"> </div> 
 <div class="about-text"> 
-<h1 class="section-title">Dana Lozova</h1> 
+<img src="vardsuzvardsparmani.png" alt="Dana Lozova" class="about-name-img" ondragstart="return false;"> 
 <p class="resume-item" style="margin-bottom: 30px; color: #666;"> Mana prakse vēl attīstās. Interesē uztvere, laiks un nobīdes.</p> 
 <div class="resume-block"> 
 <h3 class="sub-title">Izglītība</h3> 
@@ -469,7 +496,7 @@ Katram latviešu alfabēta burtam izveidota ilustrācija, kas ierastajos alfabē
 </section> 
 
 <footer> 
-    <a href="mailto:lozovadana@gmail.com" class="footer-email">lozovadana@gmail.com</a>
+    <div class="footer-email" onclick="copyEmail(this)">lozovadana@gmail.com</div>
     <div class="footer-copy">Dana Lozova &copy; 2026</div> 
 </footer> 
 
@@ -483,20 +510,16 @@ Katram latviešu alfabēta burtam izveidota ilustrācija, kas ierastajos alfabē
             <button class="nav-btn prev-btn" onclick="changeSlide(-1)">
                 <img src="pakreisi.png" alt="Iepriekšējais">
             </button>
-            
             <div id="modalMedia"></div> 
-            
             <button class="nav-btn next-btn" onclick="changeSlide(1)">
                 <img src="palabi.png" alt="Nākamais">
             </button>
-            
             <div id="thumbBar" class="thumb-bar"></div>
         </div>
         <div class="modal-info"> 
             <h2 id="modalTitle"></h2> 
             <div class="description" id="modalDesc"></div> 
             <div class="info-grid"> 
-                <span class="info-label"></span> 
                 <div class="info-value" id="modalExtra"></div> 
             </div> 
         </div> 
@@ -506,6 +529,27 @@ Katram latviešu alfabēta burtam izveidota ilustrācija, kas ierastajos alfabē
 <script> 
 let currentImages = [];
 let currentIndex = 0;
+
+// GALERIJAS JAUKŠANA (SHUFFLE)
+function shuffleGallery() {
+    const gallery = document.getElementById('mainGallery');
+    const items = Array.from(gallery.children);
+    for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        gallery.appendChild(items[j]);
+    }
+}
+window.addEventListener('DOMContentLoaded', shuffleGallery);
+
+// E-PASTA KOPĒŠANA
+function copyEmail(element) {
+    const email = "lozovadana@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        const originalText = element.innerText;
+        element.innerText = "Nokopēts!";
+        setTimeout(() => { element.innerText = originalText; }, 2000);
+    });
+}
 
 function showAbout() { 
     document.getElementById('portfolio-content').style.display = 'none'; 
@@ -549,6 +593,7 @@ function openModal(type, source, title, desc, extra) {
         currentImages.forEach((imgUrl, index) => {
             const img = document.createElement('img');
             img.src = imgUrl; img.className = 'main-slide' + (index === 0 ? ' active' : '');
+            img.setAttribute('ondragstart', 'return false;');
             media.appendChild(img);
             if(currentImages.length > 1) {
                 const thumb = document.createElement('img');
@@ -579,24 +624,6 @@ function closeModal() {
     document.body.style.overflow = 'auto'; 
 } 
 window.onclick = function(event) { if (event.target == document.getElementById('workModal')) closeModal(); }
-
-// Swipe support for mobile image slider
-(function() {
-    let tx = 0, ty = 0;
-    const m = document.getElementById('workModal');
-    m.addEventListener('touchstart', function(e) {
-        tx = e.changedTouches[0].screenX;
-        ty = e.changedTouches[0].screenY;
-    }, { passive: true });
-    m.addEventListener('touchend', function(e) {
-        if (currentImages.length < 2) return;
-        const dx = e.changedTouches[0].screenX - tx;
-        const dy = e.changedTouches[0].screenY - ty;
-        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-            changeSlide(dx < 0 ? 1 : -1);
-        }
-    }, { passive: true });
-})();
 </script> 
 </body>
 </html>
